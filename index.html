@@ -83,7 +83,16 @@ src="https://www.facebook.com/tr?id= 804869011739359&ev=PageView&noscript=1"
 </head>
 <body>
   <div class="aviso-topo">
-    <p>VEJA A APRESENTAÇÃO ATÉ O FINAL, ELA SERÁ RETIRADA HOJE... <span id="dataAtual"></span></p>
+    <p>VEJA A APRESENTAÇÃO ATÉ O FINAL, ELA SERÁ RETIRADA HOJE... // Função para atualizar a data atual
+function atualizarData() {
+  var data = new Date();
+  var dia = String(data.getDate()).padStart(2, '0');
+  var mes = String(data.getMonth() + 1).padStart(2, '0'); // Janeiro é 0!
+  var ano = data.getFullYear();
+  var dataAtual = dia + '/' + mes + '/' + ano;
+  document.getElementById('dataAtual').innerText = dataAtual;
+}
+
   </div>
 
   <header class="py-4">
@@ -95,7 +104,15 @@ src="https://www.facebook.com/tr?id= 804869011739359&ev=PageView&noscript=1"
             <p>CLIQUE NA APRESENTAÇÃO E VEJA PARA ENTENDER...</p>
            <script type="text/javascript" id="scr_66209856dd580800086dbeef">var s=document.createElement("script");s.src="https://scripts.converteai.net/e203bd65-8846-4b15-b558-15384e8d9cbf/ab-test/66209856dd580800086dbeef/player.js",s.async=!0,document.head.appendChild(s);</script>
           </div>
-          <p><span id="numero-assistindo">237</span> pessoas estão vendo agora</p>
+          // Função para simular a contagem de pessoas assistindo
+function atualizarContagem() {
+  var numeroAssistindo = document.getElementById('numero-assistindo');
+  var contagemAtual = parseInt(numeroAssistindo.innerText);
+  var novaContagem = contagemAtual + Math.floor(Math.random() * 10) - 5; // Simula variação aleatória
+  if (novaContagem < 0) novaContagem = 0; // Evita números negativos
+  numeroAssistindo.innerText = novaContagem;
+}
+
         </div>
       </div>
         </div>
